@@ -26,3 +26,8 @@ export class Employee extends Person{
         };
     }
 }
+
+function factory<T extends Person>(ctro: {new (...args:any[]):T}):T{
+    return new ctro();
+}
+let p = factory(Employee);
